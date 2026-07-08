@@ -1,27 +1,76 @@
 {
-    "name": "Agenda Estudiantil",
-    "short_name": "Agenda",
-    "description": "Agenda estudiantil desarrollada con Spring Boot y PWA",
-    "lang": "es-SV",
-    "start_url": "/",
-    "scope": "/",
-    "display": "standalone",
-    "orientation": "portrait",
-    "background_color": "#EEF2F7",
-    "theme_color": "#1565C0",
+  "id": "./",
+  "name": "Agenda Estudiantil PWA",
+  "short_name": "Agenda",
+  "description": "Aplicación web progresiva para la gestión de materias, tareas, horarios, exámenes y notas académicas.",
+  "lang": "es-SV",
+  "dir": "ltr",
 
-    "icons": [
+  "start_url": "./index.html",
+  "scope": "./",
+
+  "display": "standalone",
+  "orientation": "portrait",
+
+  "background_color": "#EEF2F7",
+  "theme_color": "#1565C0",
+
+  "categories": [
+    "education",
+    "productivity"
+  ],
+
+  "icons": [
+    {
+      "src": "./img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Materias",
+      "short_name": "Materias",
+      "description": "Abrir gestión de materias",
+      "url": "./materias.html",
+      "icons": [
         {
-            "src": "/img/icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable"
-        },
-        {
-            "src": "/img/icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any maskable"
+          "src": "./img/icon-192.png",
+          "sizes": "192x192"
         }
-    ]
+      ]
+    },
+    {
+      "name": "Tareas",
+      "short_name": "Tareas",
+      "description": "Abrir gestión de tareas",
+      "url": "./tareas.html",
+      "icons": [
+        {
+          "src": "./img/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Horario",
+      "short_name": "Horario",
+      "description": "Abrir horario de clases",
+      "url": "./horario.html",
+      "icons": [
+        {
+          "src": "./img/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }
