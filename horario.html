@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 
 <head>
 
@@ -9,9 +9,9 @@
 
 <title>Horario</title>
 
-<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" href="css/style.css">
 
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="./manifest.webmanifest">
 
 <meta name="theme-color" content="#1565C0">
 
@@ -85,11 +85,11 @@ Agregar
 
 <br>
 
-<a th:href="@{/}">← Volver al inicio</a>
+<a href="index.html">← Volver al inicio</a>
 
 </div>
 
-<script th:src="@{/js/horario.js}"></script>
+<script src="js/horario.js"></script>
 
 <script>
 
@@ -97,7 +97,7 @@ if("serviceWorker" in navigator){
 
     window.addEventListener("load",()=>{
 
-        navigator.serviceWorker.register("/sw.js")
+        navigator.serviceWorker.register("./sw.js")
 
         .then(()=>{
 
