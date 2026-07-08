@@ -83,11 +83,12 @@
 
     <br><br>
 
-    <a href="index.html">
-
-        ← Volver al inicio
-
+    <div class="acciones">
+    <a href="index.html" class="btn-volver">
+        <span>🏠</span>
+        <span>Volver al inicio</span>
     </a>
+</div>
 
 </div>
 
@@ -99,7 +100,7 @@ if("serviceWorker" in navigator){
 
     window.addEventListener("load",()=>{
 
-        navigator.serviceWorker.register("/sw.js")
+        navigator.serviceWorker.register("sw.js")
 
         .then(()=>{
 
