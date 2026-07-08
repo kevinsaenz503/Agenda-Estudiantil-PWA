@@ -363,3 +363,54 @@ tbody tr:hover{
     box-shadow:0 4px 12px rgba(0,0,0,.1);
 
 }
+
+/* ==========================
+   Botón Volver al inicio
+========================== */
+
+.acciones{
+    margin-top:25px;
+    display:flex;
+    justify-content:flex-start;
+}
+
+.btn-volver{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:12px 22px;
+
+    background:#1565C0;
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.18);
+
+}
+
+.btn-volver:hover{
+
+    background:#0D47A1;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+
+}
+
+.btn-volver:active{
+
+    transform:scale(.97);
+
+}
