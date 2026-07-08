@@ -1,89 +1,54 @@
-const CACHE_NAME = "agenda-estudiantil-v1";
+const CACHE = "agenda-v2";
 
-const FILES = [
+const ARCHIVOS = [
+    "./",
+    "./index.html",
+    "./materias.html",
+    "./tareas.html",
+    "./horario.html",
+    "./examenes.html",
+    "./notas.html",
+    "./calendario.html",
+    "./configuracion.html",
 
-    "/",
+    "./css/style.css",
 
-    "/css/style.css",
+    "./js/app.js",
+    "./js/dashboard.js",
+    "./js/materias.js",
+    "./js/tareas.js",
+    "./js/horario.js",
+    "./js/examenes.js",
+    "./js/notas.js",
+    "./js/calendario.js",
+    "./js/configuracion.js",
+    "./js/install.js",
 
-    "/js/app.js",
-    "/js/dashboard.js",
-    "/js/materias.js",
-    "/js/tareas.js",
-    "/js/horario.js",
-    "/js/examenes.js",
-    "/js/notas.js",
-    "/js/calendario.js",
-    "/js/configuracion.js",
+    "./manifest.webmanifest",
 
-    "/img/icon-192.png",
-    "/img/icon-512.png"
-
+    "./img/icon-192.png",
+    "./img/icon-512.png"
 ];
 
-self.addEventListener("install", event => {
+self.addEventListener("install", e => {
 
-    event.waitUntil(
+    e.waitUntil(
 
-        caches.open(CACHE_NAME)
+        caches.open(CACHE)
 
-        .then(cache => cache.addAll(FILES))
-
-    );
-
-});
-
-self.addEventListener("activate", event => {
-
-    event.waitUntil(
-
-        caches.keys()
-
-        .then(keys => Promise.all(
-
-            keys.map(key => {
-
-                if(key !== CACHE_NAME){
-
-                    return caches.delete(key);
-
-                }
-
-            })
-
-        ))
+            .then(cache => cache.addAll(ARCHIVOS))
 
     );
 
 });
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", e => {
 
-    event.respondWith(
+    e.respondWith(
 
-        caches.match(event.request)
+        caches.match(e.request)
 
-        .then(cacheResponse => {
-
-            return cacheResponse || fetch(event.request).then(networkResponse => {
-
-                if(event.request.method === "GET"){
-
-                    const responseClone = networkResponse.clone();
-
-                    caches.open(CACHE_NAME).then(cache => {
-
-                        cache.put(event.request, responseClone);
-
-                    });
-
-                }
-
-                return networkResponse;
-
-            });
-
-        })
+            .then(resp => resp || fetch(e.request))
 
     );
 
