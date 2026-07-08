@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Horario</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+<link rel="manifest" href="/manifest.webmanifest">
+
+<meta name="theme-color" content="#1565C0">
+
+<link rel="icon" href="/img/icon-192.png">
+
+</head>
+
+<body>
+
+<div class="contenido">
+
+<h1>📅 Horario de Clases</h1>
+
+<br>
+
+<form id="formHorario">
+
+<select id="dia">
+
+<option>Lunes</option>
+<option>Martes</option>
+<option>Miércoles</option>
+<option>Jueves</option>
+<option>Viernes</option>
+
+</select>
+
+<select id="materia"></select>
+
+<input type="time" id="inicio" required>
+
+<input type="time" id="fin" required>
+
+<input type="text" id="aula" placeholder="Aula">
+
+<input type="text" id="profesor" placeholder="Profesor">
+
+<button type="submit">
+
+Agregar
+
+</button>
+
+</form>
+
+<br>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Día</th>
+<th>Materia</th>
+<th>Inicio</th>
+<th>Fin</th>
+<th>Aula</th>
+<th>Profesor</th>
+<th>Acción</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tablaHorario">
+
+</tbody>
+
+</table>
+
+<br>
+
+<a th:href="@{/}">← Volver al inicio</a>
+
+</div>
+
+<script th:src="@{/js/horario.js}"></script>
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener("load",()=>{
+
+        navigator.serviceWorker.register("/sw.js")
+
+        .then(()=>{
+
+            console.log("Service Worker registrado");
+
+        })
+
+        .catch(error=>{
+
+            console.log(error);
+
+        });
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

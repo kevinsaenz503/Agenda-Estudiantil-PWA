@@ -1,0 +1,365 @@
+:root{
+
+    --principal:#1565C0;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef2f7;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Menú */
+
+.sidebar{
+    width:250px;
+    background:var(--principal);
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:15px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.sidebar li:hover{
+    background:#1976D2;
+}
+
+.activo{
+    background:#42A5F5;
+}
+
+/* Contenido */
+
+.contenido{
+    flex:1;
+    padding:30px;
+}
+
+header h1{
+    color:var(--principal);
+}
+
+header p{
+    color:#666;
+    margin-top:10px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.card h2{
+    margin-top:15px;
+    color:var(--principal);
+}
+
+.panel{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:30px;
+}
+
+.panel1,
+.panel2{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.calendario{
+    margin-top:20px;
+    height:250px;
+    border:2px dashed #bbb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#888;
+}
+
+@media(max-width:900px){
+
+.panel{
+    grid-template-columns:1fr;
+}
+
+.sidebar{
+    width:200px;
+}
+
+}
+
+@media(max-width:700px){
+
+.container{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+}
+
+}
+
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    display:block;
+}
+
+.sidebar a:hover{
+    color:#FFF59D;
+}
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.acciones{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+
+}
+
+#hora{
+
+    font-weight:bold;
+
+    color:var(--principal);
+
+}
+
+#modoOscuro{
+
+    border:none;
+
+    background:var(--principal);
+
+    color:white;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.dark{
+
+    background:#1E1E1E;
+
+    color:white;
+
+}
+
+.dark .card,
+.dark .panel1,
+.dark .panel2{
+
+    background:#2C2C2C;
+
+    color:white;
+
+}
+
+.dark header h1{
+
+    color:#64B5F6;
+
+}
+
+form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+input{
+    padding:10px;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+    border:none;
+    background:var(--principal);
+    color:white;
+    border-radius:8px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+th{
+    background:var(--principal);
+    color:white;
+}
+
+.color-box{
+    width:25px;
+    height:25px;
+    margin:auto;
+    border-radius:50%;
+}
+
+.btnEliminar{
+    background:#D32F2F;
+}
+
+button:hover{
+
+opacity:.9;
+
+transform:scale(1.03);
+
+transition:.3s;
+
+}
+
+input,select{
+
+padding:10px;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+}
+
+table{
+
+border-radius:10px;
+
+overflow:hidden;
+
+}
+
+form{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+
+    margin-bottom:20px;
+
+}
+
+table{
+
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+
+}
+
+tbody tr:hover{
+
+    background:#f5f5f5;
+
+}
+
+#actividades{
+
+    list-style:none;
+
+    margin-top:15px;
+
+}
+
+#actividades li{
+
+    padding:10px;
+
+}
+
+.card{
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.panel1,.panel2{
+
+    min-height:350px;
+
+}
+
+#calendar{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+
+}
