@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 
 <head>
 
@@ -9,11 +9,11 @@
 
 <title>Calendario</title>
 
-<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" href="css/style.css">
 
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.css" rel="stylesheet">
 
-<link rel="manifest" href="/manifest.webmanifest">
+<link rel="manifest" href="./manifest.webmanifest">
 
 <meta name="theme-color" content="#1565C0">
 
@@ -33,13 +33,13 @@
 
 <br>
 
-<a th:href="@{/}">← Volver al inicio</a>
+<a href="index.html">← Volver al inicio</a>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js"></script>
 
-<script th:src="@{/js/calendario.js}"></script>
+<script src="js/calendario.js"></script>
 
 <script>
 
@@ -47,7 +47,7 @@ if("serviceWorker" in navigator){
 
     window.addEventListener("load",()=>{
 
-        navigator.serviceWorker.register("/sw.js")
+        navigator.serviceWorker.register("./sw.js")
 
         .then(()=>{
 
