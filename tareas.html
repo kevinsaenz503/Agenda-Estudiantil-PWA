@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <title>Tareas</title>
 
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="css/style.css">
     
-    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="manifest" href="./manifest.webmanifest">
 
 <meta name="theme-color" content="#1565C0">
 
-<link rel="icon" href="/img/icon-192.png">
+<link rel="icon" href="./img/icon-192.png">
 </head>
 
 <body>
@@ -80,11 +80,11 @@ placeholder="Buscar tarea...">
 
 <br>
 
-<a th:href="@{/}">← Volver al inicio</a>
+<a href="index.html">← Volver al inicio</a>
 
 </div>
 
-<script th:src="@{/js/tareas.js}"></script>
+<script src="js/tareas.js"></script>
 
 <script>
 
@@ -92,7 +92,7 @@ if("serviceWorker" in navigator){
 
     window.addEventListener("load",()=>{
 
-        navigator.serviceWorker.register("/sw.js")
+        navigator.serviceWorker.register("./sw.js")
 
         .then(()=>{
 
