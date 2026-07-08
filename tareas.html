@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    
+    <link rel="manifest" href="/manifest.webmanifest">
+
+<meta name="theme-color" content="#1565C0">
+
+<link rel="icon" href="/img/icon-192.png">
+</head>
+
+<body>
+
+<div class="contenido">
+
+<h1>📝 Gestión de Tareas</h1>
+
+<br>
+
+<form id="formTarea">
+
+<input type="text" id="titulo" placeholder="Título de la tarea" required>
+
+<select id="materia"></select>
+
+<select id="prioridad">
+<option>Alta</option>
+<option>Media</option>
+<option>Baja</option>
+</select>
+
+<input type="date" id="fecha">
+
+<select id="estado">
+<option>Pendiente</option>
+<option>En progreso</option>
+<option>Completada</option>
+</select>
+
+<button type="submit">Agregar</button>
+
+</form>
+
+<br>
+
+<input
+type="text"
+id="buscar"
+placeholder="Buscar tarea...">
+
+<br><br>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Título</th>
+<th>Materia</th>
+<th>Prioridad</th>
+<th>Entrega</th>
+<th>Estado</th>
+<th>Acción</th>
+
+</tr>
+
+</thead>
+
+<tbody id="listaTareas">
+
+</tbody>
+
+</table>
+
+<br>
+
+<a th:href="@{/}">← Volver al inicio</a>
+
+</div>
+
+<script th:src="@{/js/tareas.js}"></script>
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener("load",()=>{
+
+        navigator.serviceWorker.register("/sw.js")
+
+        .then(()=>{
+
+            console.log("Service Worker registrado");
+
+        })
+
+        .catch(error=>{
+
+            console.log(error);
+
+        });
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>
